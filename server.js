@@ -19,6 +19,14 @@ function dbConnection() {
     });
 }
 
+// const crypto = require("crypto");
+// function generateAccessToken() {
+//   let secret = crypto.randomBytes(32).toString("hex");
+//   console.log(secret);
+// }
+
+// generateAccessToken();
+
 app.use(morgan("dev"));
 app.use(express.json());
 app.use("/api", routes);
