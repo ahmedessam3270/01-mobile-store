@@ -8,6 +8,10 @@ const userSchema = new Schema({
   address: { type: String, required: true, trim: true },
   nationalID: { type: Number, required: true, trim: true },
   phone: { type: String, required: true, trim: true },
+  isAdmin: { type: Boolean, default: false },
+
+  // best fit when there is more than 2 roles
+  // role: { type: String, enum: ["Admin", "User"] },
 });
 
 userSchema.pre("save", async function (next) {
