@@ -26,7 +26,7 @@ const adminAuth = function (req, res, next) {
   authenticate(req, res, () => {
     let user = req.user;
     if (!user.isAdmin) {
-      return res.send({
+      return res.status(401).send({
         message: "Route is only for Admins !!!",
       });
     } else {
