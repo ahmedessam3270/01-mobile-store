@@ -2,7 +2,8 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/user.model");
 const userControl = {
   getUserData: asyncHandler(async (req, res) => {
-    res.send(req.user);
+    let data = await User.findById(req.user._id).populate("store");
+    res.send(data);
   }),
   getAllUsers: asyncHandler(async (req, res) => {
     let users = await User.find();

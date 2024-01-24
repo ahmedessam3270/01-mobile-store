@@ -33,6 +33,9 @@ module.exports = {
       .messages({
         "string.required": "phone is required",
       }),
+    store: Joi.string().required().messages({
+      "string.required": "store is required",
+    }),
   }),
   loginSchema: Joi.object().keys({
     email: Joi.string().email().min(3).max(30).required().messages({

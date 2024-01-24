@@ -26,6 +26,6 @@ storeSchema.pre("findOneAndDelete", async function (next) {
   next();
 });
 
-const Store = mongoose.model("store", storeSchema);
+const Store = mongoose.model("Store", storeSchema);
 
 module.exports = Store;
